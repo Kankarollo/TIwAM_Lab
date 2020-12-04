@@ -1,0 +1,40 @@
+{
+    "Users": [
+        {
+            "name": "Andrzej",
+            "surname": "Kowalski",
+            "address": "Gdansk",
+            "age": "23",
+            "login": "admin",
+            "password": "admin",
+            "email": "admin@gmail.com"
+        },
+        {
+            "name": "Joanna",
+            "surname": "Wisniewska",
+            "address": "Poznan",
+            "age": "50",
+            "login": "user",
+            "password": "1234567",
+            "email": "user@gmail.com"
+        },
+        {
+            "name": "Tomcio",
+            "surname": "Pociag",
+            "address": "Warszawa",
+            "age": "77",
+            "login": "tester",
+            "password": "tester",
+            "email": "tester@gmail.com"
+        },
+        {
+            "name": "PAwel",
+            "surname": "Kankowski",
+            "address": "Warszawa",
+            "age": "123",
+            "login": "Kankarollo",
+            "password": "1234567",
+            "email": "kanka@gmail.com"
+        }
+    ]
+}

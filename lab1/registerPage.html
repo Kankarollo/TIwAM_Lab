@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>TIwAM Lab1</title>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="js/webpage.js"></script>
+    </head>
+    <body>
+        <button onclick="location.href ='index.html'">Home</button>
+        <h1>Register Page</h1>
+        <form method="POST" action="server.php">
+            <label>Imie:</label>
+            <input required="required" name="name" type="text" id="name">
+            <br/>
+            <label>Nazwisko:</label>
+            <input required="required" name="surname" type="text" id="surname">
+            <br/>
+            <label>Adres:</label>
+            <input required="required" name="address" type="text" id="adress">
+            <br/>
+            <label>Wiek:</label>
+            <input required="required" name="age" type="text" id="age">
+            <br/>
+            <label>Login:</label>
+            <input required="required" name="login" type="text" id="login">
+            <br/>
+            <label>Password:</label>
+            <input required="required" name="password" type="password" id="password_one">
+            <br/>
+            <label>email:</label>
+            <input required="required" name="email" type="text" id="email" pattern="^[A-Z0-9a-z.']+@[\w\d]+.[\w\d]{2,4}$" title="Pass correct email">
+            <br/>
+            <input type="submit" value="Submit" id="submitRegister">
+        </form> 
+    </body>
+</html>

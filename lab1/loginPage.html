@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>TIwAM Lab1</title>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="js/webpage.js"></script>
+    </head>
+    <body>
+        <button onclick="location.href ='index.html'">Home</button>
+        <h1>Login Page</h1> 
+        <form method="GET" action="server.php">
+            <label>Login:</label>
+            <input required="required" type="text" name="login" id="loginInput">
+            <br/>
+            <label>Password:</label>
+            <input required="required" type="password" name="pass" id="passwordInput">
+            <br/>
+            <input type="submit" value="Submit" name="submitInput">
+        </form>         
+    </body>
+</html>

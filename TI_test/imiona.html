@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Najpopularniejsze imiona</title>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css"/>
+        <script src="https://unpkg.com/angular/angular.min.js"></script>
+        <script src="imiona.js"></script>
+
+    </head>
+    <body ng-app="imionaApp" ng-controller="imionaCtrl">
+        <div class="container">
+            <h3>Najpopularniejsze imiona w Polsce</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Pozycja</th>
+                        <th>Imie</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="i in imiona">
+                        <td>{{i.id}}</td>
+                        <td>{{i.pozycja}}</td>
+                        <td>{{i.imie}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>
