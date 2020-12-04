@@ -57,7 +57,7 @@
         $email = strip_tags($_POST["email"]);
         
         foreach ($people as $user) {
-            if($login == $user->login) {
+            if($login == $user->login or $email == $user->email) {
                 print(json_encode("EXIST"));
                 return;
             }

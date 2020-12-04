@@ -37,7 +37,7 @@ $(document).ready(() => {
                     $("#hellomsg").text("Welcome new user!");
                 }
                 else if(response == "\"EXIST\"") {
-                    $("#hellomsg").text("User already exist! Change login.");
+                    $("#hellomsg").text("User already exist!");
                 }
                 else {
                     $("#hellomsg").text("Sorry, something went wrong!");
