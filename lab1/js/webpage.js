@@ -7,7 +7,9 @@ $(document).ready(() => {
         console.log("Jestem w registerPage");
         window.location.href = "registerPage.html";
     })
-    
+    $("#homeButton").on('click', ()=>{
+        location.href ='index.html';
+    })
 
     // function validatePassword(input) {
     //     console.log("IM HERE!!!");

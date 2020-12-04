@@ -7,7 +7,7 @@
         <script src="js/webpage.js"></script>
     </head>
     <body>
-        <button onclick="location.href ='index.html'">Home</button>
+        <button id="homeButton">Home</button>
         <h1>Register Page</h1>
         <form method="POST" action="server.php">
             <label>Imie:</label>
@@ -16,8 +16,20 @@
             <label>Nazwisko:</label>
             <input required="required" name="surname" type="text" id="surname">
             <br/>
-            <label>Adres:</label>
-            <input required="required" name="address" type="text" id="adress">
+            <label>Pesel:</label>
+            <input required="required" name="pesel" type="text" id="pesel" pattern="^[0-9]{11}$" title="Wprowadz poprawny pesel">
+            <br/>
+            <label>Ulica:</label>
+            <input required="required" name="street" type="text" id="street">
+            <br/>
+            <label>Kod pocztowy:</label>
+            <input required="required" name="postcode" type="text" id="postcode" pattern="^{2,3}-{2,3}$" title="Wprowadz poprawny kod-pocztowy">
+            <br/>
+            <label>Miasto:</label>
+            <input required="required" name="city" type="text" id="city">
+            <br/>
+            <label>Kraj:</label>
+            <input required="required" name="country" type="text" id="country">
             <br/>
             <label>Wiek:</label>
             <input required="required" name="age" type="text" id="age">
@@ -26,10 +38,10 @@
             <input required="required" name="login" type="text" id="login">
             <br/>
             <label>Password:</label>
-            <input required="required" name="password" type="password" id="password_one">
+            <input required="required" name="password" type="password" id="password">
             <br/>
             <label>email:</label>
-            <input required="required" name="email" type="text" id="email" pattern="^[A-Z0-9a-z.']+@[\w\d]+.[\w\d]{2,4}$" title="Pass correct email">
+            <input required="required" name="email" type="text" id="email" pattern="^[A-Z0-9a-z.']+@[\w\d]+.[\w\d]{2,4}$" title="Wprowadz email w poprawnym formacie">
             <br/>
             <input type="submit" value="Submit" id="submitRegister">
         </form> 
