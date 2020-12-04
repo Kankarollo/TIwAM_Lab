@@ -1,5 +1,6 @@
 <?php
-
+    header("Access-Contol-Allow-Origin: *");
+    header("Content-type: application/json; charset=utf-8");
     class User
     {
         var $name;
@@ -39,10 +40,10 @@
             $_POST["postcode"],$_POST["city"],$_POST["country"],$_POST["age"],
             $_POST["login"],$_POST["password"],$_POST["email"]))
         {
-            echo "<h1>Blad! Brak danych</h1>";
+            print(json_encode(FALSE));
             return;
         }
-
+        
         $name = strip_tags($_POST["name"]);
         $surname = strip_tags($_POST["surname"]);
         $pesel = strip_tags($_POST["pesel"]);
@@ -55,12 +56,18 @@
         $password = strip_tags($_POST["password"]);
         $email = strip_tags($_POST["email"]);
         
+        foreach ($people as $user) {
+            if($login == $user->login) {
+                print(json_encode("EXIST"));
+                return;
+            }
+        }
         $people[] = new User($name,$surname,$pesel,$street,$postcode,
-            $city,$country,$age,$login,$password,$email);
+        $city,$country,$age,$login,$password,$email);
         saveToDatabase("userDatabase.json",$people);
-
-        echo "<h1>New user registered - $login</h1>";
-
+        
+        print(json_encode(TRUE));
+        return;
     }
     elseif ($_SERVER['REQUEST_METHOD'] === 'GET') 
     {
@@ -69,10 +76,12 @@
 
         if(validateLogin($login, $password, $people)) 
         {
-            print("<h1>Logged in</h1>");
+            print(json_encode(TRUE));
+            return;
         }
         else {
-            print("<h1>Access denied</h1>");
+            print(json_encode(FALSE));
+            return;
         }
     }
 
@@ -93,8 +102,6 @@
         foreach ($people as $user) {
             if($login == $user->login and $password ==$user->password) {
                 return TRUE;
-            }
-            else {
             }
         }
         return FALSE;

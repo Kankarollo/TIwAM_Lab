@@ -1,14 +1,50 @@
 $(document).ready(() => {
     $("#loginButton").on('click', () =>{
-        console.log("Jestem w loginPage");
-        window.location.href = "loginPage.html";
+        location.href = "loginPage.html";
     })
     $("#registerButton").on('click', () => {
-        console.log("Jestem w registerPage");
-        window.location.href = "registerPage.html";
+        location.href = "registerPage.html";
     })
     $("#homeButton").on('click', ()=>{
         location.href ='index.html';
+    })
+    $("#loginForm").on('submit', (event)=>{
+        event.preventDefault();
+        var formValues = $("#loginForm").serialize();
+        console.log("Logowanie");
+        $.get("server.php", formValues,
+            function (data, textStatus, jqXHR) {
+                response = JSON.stringify(data);
+                $("#loginForm").hide();
+                if(response === "true"){
+                    $("#hellomsg").text("Logged In!");
+                }
+                else {
+                    $("#hellomsg").text("Access denied!");
+                }
+            },
+        );
+    })
+    $("#registerForm").on('submit', (event)=>{
+        event.preventDefault();
+        var formValues = $("#registerForm").serialize();
+        $.post("server.php", formValues,
+            function (data, textStatus, jqXHR) {
+                response = JSON.stringify(data);
+                $("#registerForm").hide();
+                console.log(response);
+                if(response === "true"){
+                    $("#hellomsg").text("Welcome new user!");
+                }
+                else if(response == "\"EXIST\"") {
+                    $("#hellomsg").text("User already exist! Change login.");
+                }
+                else {
+                    $("#hellomsg").text("Sorry, something went wrong!");
+                }
+            },
+        );
+        console.log("Rejestrowanie");
     })
 
     // function validatePassword(input) {
