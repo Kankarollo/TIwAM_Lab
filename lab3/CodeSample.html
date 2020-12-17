@@ -1,0 +1,33 @@
+<select id="Place">
+    <option value="Select">Select curreny</option>
+    <option value="Place1">USA</option>
+    <option value="Place2">Czechy</option>
+	<option value="Place3">Tajlandia</option>
+    <option value="All">All</option>
+</select>
+<select id="Parameter">
+    <option value="Select">Select parameter</option>
+    <option value="Temperature">Code</option>
+	<option value="wind_speed">Mid</option>
+	    <option value="All">All</option>
+</select>
+<button id="LoadData">Load</button>
+<div id="WeatherData"></div>
+  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script>
+$("#LoadData").click(function (e) {
+    $.ajax({
+		url: 'http://api.weatherstack.com/current',
+		data: {
+			access_key: '506893a1e8ff0f165f76a47bfa0c596e',
+			query: 'Warsaw'
+		},
+		dataType: 'json',
+		success: function(apiResponse) {
+			$("#WeatherData").html(`Current temperature in ${apiResponse.location.name} is 
+				${apiResponse.current.temperature} C`);
+		}
+	});
+	 });
+</script>

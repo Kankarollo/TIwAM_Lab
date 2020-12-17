@@ -1,0 +1,6 @@
+Kathmandu
+Bangladesh
+Punakha
+API:
+ACCESS_TOKEN = a0b0a17d96f3208eefbbb6ac3af7c505
+http://api.weatherstack.com/current?access_key=a0b0a17d96f3208eefbbb6ac3af7c505&query=Kathmandu
