@@ -1,0 +1,43 @@
+{
+    "Users": [
+        {
+            "name": "Andrzej",
+            "surname": "Kowalski",
+            "pesel": "83782811897",
+            "street": "Jana Pawla",
+            "postcode": "80-111",
+            "city": "Gdansk",
+            "country": "Polska",
+            "age": "23",
+            "login": "admin",
+            "password": "admin",
+            "email": "admin@adminowski.com"
+        },
+        {
+            "name": "Joanna",
+            "surname": "Wisniewska",
+            "pesel": "75292964321",
+            "street": "Piusudzkiego",
+            "postcode": "12-130",
+            "city": "Warszawa",
+            "country": "Polska",
+            "age": "66",
+            "login": "user",
+            "password": "1234567",
+            "email": "ultramen@gmail.com"
+        },
+        {
+            "name": "Tomcio",
+            "surname": "Pociag",
+            "pesel": "29935223465",
+            "street": "Komorowskiego",
+            "postcode": "123-456",
+            "city": "Berlin",
+            "country": "Niemcy",
+            "age": "45",
+            "login": "tester",
+            "password": "tester",
+            "email": "tester@gmail.com"
+        }
+    ]
+}
